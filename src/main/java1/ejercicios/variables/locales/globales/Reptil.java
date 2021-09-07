@@ -6,11 +6,13 @@ public class Reptil {
 	private String especie;
 	
 	public void comer() {
-		String tipoAnimal = "insectos";
+		this.familia = "Ofidios";
+		String tipoAnimal = "Pequeños roedores";
 	}
 	
 	public void desplazar() {
-		String movimiento = "reptar";
+		this.especie = "Serpiente de Cascabel";
+		String movimiento = "Reptar";
 	}
 	
 }
