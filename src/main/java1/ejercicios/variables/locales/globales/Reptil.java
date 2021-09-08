@@ -4,6 +4,9 @@ public class Reptil {
 	
 	private String familia;
 	private String especie;
+	public static String pais = "ESTADOS UNIDOS";
+	public static String estado = "TEXAS";
+	
 	
 	public void comer() {
 		this.familia = "Ofidios";
