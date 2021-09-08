@@ -10,8 +10,12 @@ public class MainSistema {
 		Scanner teclado2 = new Scanner(System.in);
 		int opcion;
 		Estudiante estudiante1 = new Estudiante();
+		Estudiante estudiante2 = new Estudiante();
+		Estudiante estudiante3 = new Estudiante();
+		Estudiante estudiante4 = new Estudiante();
+		Estudiante estudiante5 = new Estudiante();
 		Estudiante nomina[] = new Estudiante[5];
-		int i = 0;
+		int contador = 0;
 
 		do {
 			System.out.println("BIENVENIDO, SELECCIONE UNA OPCION");
@@ -19,64 +23,57 @@ public class MainSistema {
 			System.out.println("  2. Buscar Estudiante");
 			System.out.println("  3. SALIR");
 			opcion = teclado.nextInt();
+			System.out.println(" ");
 
 			if (opcion == 1) {
 				System.out.println("Ingrese la cédula del estudiante: ");
 				String cedula = teclado2.nextLine();
-				estudiante1.setCedula(cedula);
-				nomina[i] = estudiante1;
+				System.out.println(" ");
+				if (contador == 0) {				
+					estudiante1.setCedula(cedula);
+					nomina[contador] = estudiante1;
+					
+				} else if (contador == 1) {
+					estudiante2.setCedula(cedula);
+					nomina[contador] = estudiante2;
+					
+				} else if (contador == 2) {
+					estudiante3.setCedula(cedula);
+					nomina[contador] = estudiante3;
+					
+				}else if (contador == 3) {
+					estudiante4.setCedula(cedula);
+					nomina[contador] = estudiante4;
+					
+				}else if (contador == 4) {
+					estudiante5.setCedula(cedula);
+					nomina[contador] = estudiante5;
+					
+				}
+				
 
 			} else if (opcion == 2) {
-				System.out.println("Ingrese la cédula del estudiante: ");
+				System.out.println("Ingrese la cédula para buscar al estudiante: ");
 				String cedula2 = teclado2.nextLine();
-				boolean resultado1 = nomina[0].equals(cedula2);
-				boolean resultado2 = nomina[1].equals(cedula2);
-				boolean resultado3 = nomina[2].equals(cedula2);
-				boolean resultado4 = nomina[3].equals(cedula2);
-				boolean resultado5 = nomina[4].equals(cedula2);
-				
-				if (resultado1 == true) {
-					System.out.println("Se ha encontrado al estudiante");
-					
-				} else {
-					System.out.println("No se ha encontrado al estudiante");
-					
-				}
-				
-				if (resultado2 == true) {
-					System.out.println("Se ha encontrado al estudiante");
-					
-				} else {
-					System.out.println("No se ha encontrado al estudiante");
-					
-				}
-				
-				if (resultado3 == true) {
-					System.out.println("Se ha encontrado al estudiante");
-					
-				} else {
-					System.out.println("No se ha encontrado al estudiante");
-					
-				}
-				
-				if (resultado4 == true) {
-					System.out.println("Se ha encontrado al estudiante");
-					
-				} else {
-					System.out.println("No se ha encontrado al estudiante");
-					
-				}
-				
-				if (resultado5 == true) {
-					System.out.println("Se ha encontrado al estudiante");
-					
-				} else {
-					System.out.println("No se ha encontrado al estudiante");
+				System.out.println(" ");
+				for(int i = 0 ; i < 5 ; i++) {
+					Estudiante estudiante = nomina[i];
+					String cedula = estudiante.getCedula();
+					boolean resultado = cedula2.equals(cedula);
+					if(resultado == true) {
+						System.out.println("Se ha encontrado al estudiante");
+						System.out.println(" ");
+						
+					} else if (resultado == false) {
+						System.out.println("No se ha encontrado al estudiante");
+						System.out.println(" ");
+						
+					}
 					
 				}
 				
 			}
-			i = i+1;
+			contador = contador + 1;
 		} while (opcion != 3);
 
 	}
