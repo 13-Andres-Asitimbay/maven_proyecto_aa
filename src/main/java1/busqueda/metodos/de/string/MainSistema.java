@@ -56,20 +56,25 @@ public class MainSistema {
 				System.out.println("Ingrese la cédula para buscar al estudiante: ");
 				String cedula2 = teclado2.nextLine();
 				System.out.println(" ");
+				boolean respuesta = false;
 				for(int i = 0 ; i < 5 ; i++) {
 					Estudiante estudiante = nomina[i];
 					String cedula = estudiante.getCedula();
 					boolean resultado = cedula2.equals(cedula);
 					if(resultado == true) {
-						System.out.println("Se ha encontrado al estudiante");
-						System.out.println(" ");
+						respuesta = true;
 						
-					} else if (resultado == false) {
-						System.out.println("No se ha encontrado al estudiante");
-						System.out.println(" ");
-						
-					}
+					} 
 					
+				}
+				
+				if(respuesta == true) {
+					System.out.println("Se ha encontrado al estudiante");
+					System.out.println(" ");
+					
+				} else {
+					System.out.println("No se ha encontrado al estudiante");
+					System.out.println(" ");
 				}
 				
 			}
