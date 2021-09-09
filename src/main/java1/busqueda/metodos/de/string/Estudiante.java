@@ -12,9 +12,4 @@ public class Estudiante {
 		this.cedula = cedula;
 	}
 
-	@Override
-	public String toString() {
-		return "Estudiante [cedula=" + cedula + "]";
-	}
-	
 }
